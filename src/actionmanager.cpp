@@ -257,6 +257,7 @@ QMenu *ActionManager::buildViewMenu(bool addIcon, QWidget *parent)
     addCloneOfAction(viewMenu, "zoomin");
     addCloneOfAction(viewMenu, "zoomout");
     addCloneOfAction(viewMenu, "resetzoom");
+    addCloneOfAction(viewMenu, "zoomtowindow");
     addCloneOfAction(viewMenu, "originalsize");
     viewMenu->addSeparator();
     addCloneOfAction(viewMenu, "rotateright");
@@ -517,7 +518,7 @@ void ActionManager::actionTriggered(QAction *triggeredAction)
 #ifdef Q_OS_MACOS
     windowlessActions << "about" << "welcome" << "options";
 #endif
-    for (const auto &actionName : qAsConst(windowlessActions))
+    for (const auto &actionName : std::as_const(windowlessActions))
     {
         if (key == actionName)
         {
@@ -551,8 +552,6 @@ void ActionManager::actionTriggered(QAction *triggeredAction, MainWindow *releva
 #endif
     } else if (key == "newwindow") {
         qvApp->newWindow();
-    } else if (key == "open") {
-        qvApp->pickFile(relevantWindow);
     } else if (key == "open") {
         qvApp->pickFile(relevantWindow);
     } else if (key == "closewindow") {
@@ -618,6 +617,8 @@ void ActionManager::actionTriggered(QAction *triggeredAction, MainWindow *releva
         relevantWindow->zoomOut();
     } else if (key == "resetzoom") {
         relevantWindow->resetZoom();
+    } else if (key == "zoomtowindow") {
+        relevantWindow->zoomToWindow();
     } else if (key == "originalsize") {
         relevantWindow->originalSize();
     } else if (key == "rotateright") {
@@ -739,6 +740,10 @@ void ActionManager::initializeActionLibrary()
     auto *resetZoomAction = new QAction(QIcon::fromTheme("zoom-fit-best"), tr("Reset &Zoom"));
     resetZoomAction->setData({"disable"});
     actionLibrary.insert("resetzoom", resetZoomAction);
+
+    auto *zoomToWindowAction = new QAction(QIcon::fromTheme("zoom-fit-best"), tr("Zoom to &Window"));
+    zoomToWindowAction->setData({"disable"});
+    actionLibrary.insert("zoomtowindow", zoomToWindowAction);
 
     auto *originalSizeAction = new QAction(QIcon::fromTheme("zoom-original"), tr("Ori&ginal Size"));
     originalSizeAction->setData({"disable"});

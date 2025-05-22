@@ -57,7 +57,7 @@ QVWelcomeDialog::QVWelcomeDialog(QWidget *parent) :
     ui->updateCheckBox->hide();
 #else
     ui->updateCheckBox->setChecked(qvApp->getSettingsManager().getBoolean("updatenotifications"));
-    connect(ui->updateCheckBox, &QCheckBox::stateChanged, qvApp, [](int state){
+    connect(ui->updateCheckBox, &QCheckBox::checkStateChanged, qvApp, [](int state){
         QSettings settings;
         settings.beginGroup("options");
         settings.setValue("updatenotifications", state > 0);

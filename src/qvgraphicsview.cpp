@@ -1,6 +1,5 @@
 #include "qvgraphicsview.h"
 #include "qvapplication.h"
-#include "qvinfodialog.h"
 #include "qvcocoafunctions.h"
 #include <QWheelEvent>
 #include <QGraphicsPixmapItem>
@@ -76,7 +75,7 @@ void QVGraphicsView::resizeEvent(QResizeEvent *event)
 {
     QGraphicsView::resizeEvent(event);
     if (!isOriginalSize)
-        resetScale();
+        resetScale(false);
     else
         centerOn(loadedPixmapItem);
 }
@@ -429,17 +428,17 @@ void QVGraphicsView::updateLoadedPixmapItem()
     loadedPixmapItem->setPixmap(getLoadedPixmap());
     scaledSize = loadedPixmapItem->boundingRect().size().toSize();
 
-    resetScale();
+    resetScale(false);
 
     emit updatedLoadedPixmapItem();
 }
 
-void QVGraphicsView::resetScale()
+void QVGraphicsView::resetScale(bool force_fit)
 {
     if (!getCurrentFileDetails().isPixmapLoaded)
         return;
 
-    fitInViewMarginless(loadedPixmapItem);
+    fitInViewMarginless(loadedPixmapItem, force_fit);
 
     if (isScalingEnabled)
         expensiveScaleTimerNew->start();
@@ -452,7 +451,7 @@ void QVGraphicsView::originalSize()
         // If we are at the actual original size
         if (transform() == QTransform())
         {
-            resetScale(); // back to normal mode
+            resetScale(false); // back to normal mode
             return;
         }
     }
@@ -565,7 +564,7 @@ void QVGraphicsView::goToFile(const GoToFileMode &mode, int index)
     loadFile(nextImageFilePath);
 }
 
-void QVGraphicsView::fitInViewMarginless(const QRectF &rect)
+void QVGraphicsView::fitInViewMarginless(const QRectF &rect, bool force_fit)
 {
 #ifdef COCOA_LOADED
     int obscuredHeight = QVCocoaFunctions::getObscuredHeight(window()->windowHandle());
@@ -641,10 +640,21 @@ void QVGraphicsView::fitInViewMarginless(const QRectF &rect)
     QRectF sceneRect2 = transform().mapRect(QRectF({}, adjustedImageSize));
     qreal absoluteRatio = qMin(viewRect.width() / sceneRect2.width(),
                                viewRect.height() / sceneRect2.height());
-
+    double dpi = window()->screen()->physicalDotsPerInch();
+    double resultPpiW = dpi / absoluteRatio;
+    qDebug() << "absolute:" << absoluteRatio;
+    qDebug() << "xratio:" << xratio;
+    if (!force_fit && resultPpiW < 50) {
+        double rate = absoluteRatio / (dpi / 50.0);
+        absoluteRatio = dpi / 50.0;
+        xratio = yratio = xratio / rate;
+    }
+    qDebug() << "absolute:" << absoluteRatio;
+    qDebug() << "xratio:" << xratio;
     absoluteTransform = QTransform::fromScale(absoluteRatio, absoluteRatio);
 
     // Scale and center on the center of \a rect.
+
     scale(xratio, yratio);
     centerOn(adjustedBoundingRect.center());
 
@@ -657,9 +667,9 @@ void QVGraphicsView::fitInViewMarginless(const QRectF &rect)
     zoomBasisScaleFactor = 1.0;
 }
 
-void QVGraphicsView::fitInViewMarginless(const QGraphicsItem *item)
+void QVGraphicsView::fitInViewMarginless(const QGraphicsItem *item, bool force_fit)
 {
-    return fitInViewMarginless(item->sceneBoundingRect());
+    return fitInViewMarginless(item->sceneBoundingRect(), force_fit);
 }
 
 void QVGraphicsView::centerOn(const QPointF &pos)
@@ -738,7 +748,7 @@ void QVGraphicsView::settingsUpdated()
     isLoopFoldersEnabled = settingsManager.getBoolean("loopfoldersenabled");
 
     if (getCurrentFileDetails().isPixmapLoaded)
-        resetScale();
+        resetScale(false);
 }
 
 void QVGraphicsView::closeImage()

@@ -1,12 +1,10 @@
-#include "mainwindow.h"
 #include "qvapplication.h"
-#include "qvwin32functions.h"
+
 
 #include <QCommandLineParser>
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QCoreApplication::setOrganizationName("qView");
     QCoreApplication::setApplicationName("qView");
     QCoreApplication::setApplicationVersion(QString::number(VERSION));
@@ -17,6 +15,7 @@ int main(int argc, char *argv[])
     parser.addVersionOption();
     parser.addPositionalArgument(QObject::tr("file"), QObject::tr("The file to open."));
 #if defined Q_OS_WIN && WIN32_LOADED && QT_VERSION < QT_VERSION_CHECK(6, 7, 2)
+    #include "qvwin32functions.h"
     // Workaround for unicode characters getting mangled in certain cases. To support unicode arguments on
     // Windows, QCoreApplication normally ignores argv and gets them from the Windows API instead. But this
     // only happens if it thinks argv hasn't been modified prior to being passed into QCoreApplication's

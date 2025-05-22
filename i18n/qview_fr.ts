@@ -29,237 +29,242 @@
         <translation>&amp;Visualiser</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="276"/>
+        <location filename="../src/actionmanager.cpp" line="277"/>
         <source>&amp;Tools</source>
         <translation>&amp;Outils</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="298"/>
+        <location filename="../src/actionmanager.cpp" line="299"/>
         <source>&amp;Help</source>
         <translation>&amp;Aide</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="312"/>
+        <location filename="../src/actionmanager.cpp" line="313"/>
         <source>Open &amp;Recent</source>
         <translation>Ouvrir les &amp;récents</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="322"/>
-        <location filename="../src/actionmanager.cpp" line="478"/>
+        <location filename="../src/actionmanager.cpp" line="323"/>
+        <location filename="../src/actionmanager.cpp" line="479"/>
         <source>Empty</source>
         <translation>Vide</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="470"/>
+        <location filename="../src/actionmanager.cpp" line="471"/>
         <source>Open With</source>
         <translation>Ouvrir avec</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="660"/>
+        <location filename="../src/actionmanager.cpp" line="663"/>
         <source>&amp;Quit</source>
         <translation>&amp;Quitter</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="664"/>
+        <location filename="../src/actionmanager.cpp" line="667"/>
         <source>Exit</source>
         <extracomment>The quit action is called &quot;Exit&quot; on windows</extracomment>
         <translation>Sortir</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="667"/>
+        <location filename="../src/actionmanager.cpp" line="670"/>
         <source>New Window</source>
         <translation>Nouvelle fenêtre</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="670"/>
+        <location filename="../src/actionmanager.cpp" line="673"/>
         <source>&amp;Open...</source>
         <translation>&amp;Ouvrir…</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="673"/>
+        <location filename="../src/actionmanager.cpp" line="676"/>
         <source>Open &amp;URL...</source>
         <translation>Ouvrir l&apos;&amp;URL…</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="676"/>
+        <location filename="../src/actionmanager.cpp" line="679"/>
         <source>Re&amp;load File</source>
         <translation>Rechar&amp;ger le fichier</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="680"/>
+        <location filename="../src/actionmanager.cpp" line="683"/>
         <source>Close Window</source>
         <translation>Fermer la fenêtre</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="684"/>
+        <location filename="../src/actionmanager.cpp" line="687"/>
         <source>Close All</source>
         <extracomment>Close all windows, that is</extracomment>
         <translation>Tout fermer</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="687"/>
+        <location filename="../src/actionmanager.cpp" line="690"/>
         <source>Open Containing &amp;Folder</source>
         <translation>Ouvrir le &amp;dossier contenant</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="690"/>
+        <location filename="../src/actionmanager.cpp" line="693"/>
         <source>Show in E&amp;xplorer</source>
         <extracomment>Open containing folder on windows</extracomment>
         <translation>Afficher dans l&apos;E&amp;xplorateur</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="693"/>
+        <location filename="../src/actionmanager.cpp" line="696"/>
         <source>Show in &amp;Finder</source>
         <extracomment>Open containing folder on macOS</extracomment>
         <translation>Afficher dans &amp;Finder</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="698"/>
+        <location filename="../src/actionmanager.cpp" line="701"/>
         <source>Show File &amp;Info</source>
         <translation>Afficher les &amp;infos du fichier</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="702"/>
+        <location filename="../src/actionmanager.cpp" line="705"/>
         <source>&amp;Move to Trash</source>
         <translation>&amp;Envoyer à la corbeille</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="704"/>
+        <location filename="../src/actionmanager.cpp" line="707"/>
         <source>&amp;Delete</source>
         <translation>&amp;Supprimer</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="709"/>
+        <location filename="../src/actionmanager.cpp" line="712"/>
         <source>Delete Permanently</source>
         <translation>Supprimer définitivement</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="713"/>
+        <location filename="../src/actionmanager.cpp" line="716"/>
         <source>&amp;Restore from Trash</source>
         <translation>&amp;Restaurer</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="715"/>
+        <location filename="../src/actionmanager.cpp" line="718"/>
         <source>&amp;Undo Delete</source>
         <translation>&amp;Annuler la suppression</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="720"/>
+        <location filename="../src/actionmanager.cpp" line="723"/>
         <source>&amp;Copy</source>
         <translation>&amp;Copier</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="724"/>
+        <location filename="../src/actionmanager.cpp" line="727"/>
         <source>&amp;Paste</source>
         <translation>&amp;Coller</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="727"/>
+        <location filename="../src/actionmanager.cpp" line="730"/>
         <source>R&amp;ename...</source>
         <translation>R&amp;enommer…</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="731"/>
+        <location filename="../src/actionmanager.cpp" line="734"/>
         <source>Zoom &amp;In</source>
         <translation>&amp;Agrandir</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="735"/>
+        <location filename="../src/actionmanager.cpp" line="738"/>
         <source>Zoom &amp;Out</source>
         <translation>&amp;Diminuer</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="739"/>
+        <location filename="../src/actionmanager.cpp" line="742"/>
         <source>Reset &amp;Zoom</source>
         <translation>Réinitialiser le &amp;zoom</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="743"/>
+        <location filename="../src/actionmanager.cpp" line="746"/>
+        <source>Zoom to &amp;Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/actionmanager.cpp" line="750"/>
         <source>Ori&amp;ginal Size</source>
         <translation>Taille ori&amp;ginale</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="747"/>
+        <location filename="../src/actionmanager.cpp" line="754"/>
         <source>Rotate &amp;Right</source>
         <translation>Tourner à &amp;droite</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="751"/>
+        <location filename="../src/actionmanager.cpp" line="758"/>
         <source>Rotate &amp;Left</source>
         <translation>Tourner à &amp;gauche</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="755"/>
+        <location filename="../src/actionmanager.cpp" line="762"/>
         <source>&amp;Mirror</source>
         <translation>&amp;Miroir</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="759"/>
+        <location filename="../src/actionmanager.cpp" line="766"/>
         <source>&amp;Flip</source>
         <translation>&amp;Retourner</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="763"/>
+        <location filename="../src/actionmanager.cpp" line="770"/>
         <source>Enter F&amp;ull Screen</source>
         <translation>Mode &amp;plein écran</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="767"/>
+        <location filename="../src/actionmanager.cpp" line="774"/>
         <source>&amp;First File</source>
         <translation>&amp;Premier fichier</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="771"/>
+        <location filename="../src/actionmanager.cpp" line="778"/>
         <source>Previous Fi&amp;le</source>
         <translation>Fi&amp;chier précédent</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="775"/>
+        <location filename="../src/actionmanager.cpp" line="782"/>
         <source>&amp;Next File</source>
         <translation>&amp;Fichier suivant</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="779"/>
+        <location filename="../src/actionmanager.cpp" line="786"/>
         <source>Las&amp;t File</source>
         <translation>Der&amp;nier fichier</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="783"/>
+        <location filename="../src/actionmanager.cpp" line="790"/>
         <source>Save Frame &amp;As...</source>
         <translation>Enregistrer l&apos;écran &amp;sous…</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="787"/>
+        <location filename="../src/actionmanager.cpp" line="794"/>
         <source>Pa&amp;use</source>
         <translation>Pa&amp;use</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="791"/>
+        <location filename="../src/actionmanager.cpp" line="798"/>
         <source>&amp;Next Frame</source>
         <translation>&amp;Écran suivant</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="795"/>
+        <location filename="../src/actionmanager.cpp" line="802"/>
         <source>&amp;Decrease Speed</source>
         <translation>&amp;Réduire la vitesse</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="799"/>
+        <location filename="../src/actionmanager.cpp" line="806"/>
         <source>&amp;Reset Speed</source>
         <translation>&amp;Réinitialiser la vitesse</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="803"/>
+        <location filename="../src/actionmanager.cpp" line="810"/>
         <source>&amp;Increase Speed</source>
         <translation>&amp;Augmenter la vitesse</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="807"/>
+        <location filename="../src/actionmanager.cpp" line="814"/>
         <source>Start S&amp;lideshow</source>
         <translation>Démarrer le &amp;diaporama</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="812"/>
+        <location filename="../src/actionmanager.cpp" line="819"/>
         <source>&amp;Settings</source>
         <extracomment>This is for the options dialog on windows</extracomment>
         <translation>&amp;Paramètres</translation>
@@ -275,52 +280,52 @@
         <translation type="vanished">Préférence&amp;s</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="816"/>
+        <location filename="../src/actionmanager.cpp" line="823"/>
         <source>Preference&amp;s...</source>
         <extracomment>This is for the options dialog on older mac versions</extracomment>
         <translation>Préférence&amp;s…</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="818"/>
+        <location filename="../src/actionmanager.cpp" line="825"/>
         <source>Setting&amp;s...</source>
         <translation>Paramètre&amp;s...</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="823"/>
+        <location filename="../src/actionmanager.cpp" line="830"/>
         <source>&amp;About</source>
         <translation>&amp;À propos</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="826"/>
+        <location filename="../src/actionmanager.cpp" line="833"/>
         <source>&amp;About qView</source>
         <extracomment>This is for the about dialog on mac</extracomment>
         <translation>&amp;À propos de qView</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="830"/>
+        <location filename="../src/actionmanager.cpp" line="837"/>
         <source>&amp;Welcome</source>
         <translation>&amp;Bienvenue</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="834"/>
+        <location filename="../src/actionmanager.cpp" line="841"/>
         <source>Clear &amp;Menu</source>
         <extracomment>This is for clearing the recents menu</extracomment>
         <translation>Nettoyer le &amp;menu</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="838"/>
+        <location filename="../src/actionmanager.cpp" line="845"/>
         <source>Other Application...</source>
         <extracomment>Open with other program for unix non-mac</extracomment>
         <translation>Autre application...</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="841"/>
+        <location filename="../src/actionmanager.cpp" line="848"/>
         <source>Choose another app</source>
         <extracomment>Open with other program for windows</extracomment>
         <translation>Choisir une autre appli</translation>
     </message>
     <message>
-        <location filename="../src/actionmanager.cpp" line="844"/>
+        <location filename="../src/actionmanager.cpp" line="851"/>
         <source>Other...</source>
         <extracomment>Open with other program for macos</extracomment>
         <translation>Autre...</translation>
@@ -476,27 +481,27 @@ Pas d&apos;autorisation d&apos;écriture ou le fichier est en lecture seule.</tr
 (Vérifiez que vous disposez d&apos;un accès en écriture)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1068"/>
+        <location filename="../src/mainwindow.cpp" line="1073"/>
         <source>Save Frame As...</source>
         <translation>Enregistrer l&apos;écran sous…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1097"/>
+        <location filename="../src/mainwindow.cpp" line="1102"/>
         <source>Res&amp;ume</source>
         <translation>Rep&amp;rendre</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1106"/>
+        <location filename="../src/mainwindow.cpp" line="1111"/>
         <source>Pause</source>
         <translation>Pause</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1129"/>
+        <location filename="../src/mainwindow.cpp" line="1134"/>
         <source>Start S&amp;lideshow</source>
         <translation>Démarrer le diapo&amp;rama</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1138"/>
+        <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Stop S&amp;lideshow</source>
         <translation>Arrêter le d&amp;iaporama</translation>
     </message>
@@ -622,76 +627,356 @@ Pas d&apos;autorisation d&apos;écriture ou le fichier est en lecture seule.</tr
 <context>
     <name>QVInfoDialog</name>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="20"/>
+        <location filename="../src/qvinfodialog.ui" line="26"/>
         <source>File Info</source>
         <translation>Infos du fichier</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="26"/>
+        <location filename="../src/qvinfodialog.ui" line="83"/>
         <source>Name:</source>
         <translation>Nom&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="36"/>
-        <location filename="../src/qvinfodialog.ui" line="65"/>
-        <location filename="../src/qvinfodialog.ui" line="85"/>
-        <location filename="../src/qvinfodialog.ui" line="114"/>
-        <location filename="../src/qvinfodialog.ui" line="143"/>
-        <location filename="../src/qvinfodialog.ui" line="163"/>
-        <location filename="../src/qvinfodialog.ui" line="183"/>
-        <location filename="../src/qvinfodialog.ui" line="203"/>
+        <location filename="../src/qvinfodialog.ui" line="93"/>
+        <location filename="../src/qvinfodialog.ui" line="122"/>
+        <location filename="../src/qvinfodialog.ui" line="151"/>
+        <location filename="../src/qvinfodialog.ui" line="171"/>
+        <location filename="../src/qvinfodialog.ui" line="200"/>
+        <location filename="../src/qvinfodialog.ui" line="220"/>
+        <location filename="../src/qvinfodialog.ui" line="240"/>
+        <location filename="../src/qvinfodialog.ui" line="260"/>
         <source>error</source>
         <translation>erreur</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="52"/>
+        <location filename="../src/qvinfodialog.ui" line="109"/>
         <source>Type:</source>
         <translation>Type&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="75"/>
+        <location filename="../src/qvinfodialog.ui" line="161"/>
         <source>Location:</source>
         <translation>Emplacement&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="101"/>
+        <location filename="../src/qvinfodialog.ui" line="270"/>
+        <source>Camera make:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="284"/>
+        <source>Camera model:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="298"/>
+        <source>Software:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="312"/>
+        <source>Bits per sample:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="326"/>
+        <source>Image description:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="340"/>
+        <source>Image copyright:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="354"/>
+        <source>Image date/time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="368"/>
+        <source>Original date/time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="382"/>
+        <source>Digitize date/time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="396"/>
+        <source>Subsecond time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="410"/>
+        <source>Exposure time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="424"/>
+        <source>F-stop:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="438"/>
+        <source>Exposure program:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="452"/>
+        <source>ISO speed:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="466"/>
+        <source>Subject distance:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="480"/>
+        <source>Exposure bias:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="494"/>
+        <source>Flash used:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="508"/>
+        <source>Flash returned light:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="522"/>
+        <source>Flash mode:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="536"/>
+        <source>Metering mode:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="550"/>
+        <source>Lens focal length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="564"/>
+        <source>35mm focal length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="578"/>
+        <source>GPS Latitude:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="592"/>
+        <source>GPS Longitude:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="606"/>
+        <source>GPS Altitude:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="620"/>
+        <source>GPS Precision (DOP):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="634"/>
+        <source>Lens min focal length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="648"/>
+        <source>Lens max focal length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="662"/>
+        <source>Lens f-stop min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="676"/>
+        <source>Lens f-stop max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="690"/>
+        <source>Lens make:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="704"/>
+        <source>Lens model:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.ui" line="138"/>
         <source>Size:</source>
         <translation>Taille&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="130"/>
+        <location filename="../src/qvinfodialog.ui" line="187"/>
         <source>Modified:</source>
         <translation>Modifié&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="153"/>
+        <location filename="../src/qvinfodialog.ui" line="210"/>
         <source>Dimensions:</source>
         <translation>Dimensions&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="173"/>
+        <location filename="../src/qvinfodialog.ui" line="230"/>
         <source>Aspect Ratio:</source>
         <translation>Rapport d’aspect&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="193"/>
+        <location filename="../src/qvinfodialog.ui" line="250"/>
         <source>Frames:</source>
         <translation>Écrans&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.ui" line="213"/>
+        <location filename="../src/qvinfodialog.ui" line="722"/>
         <source>Refresh</source>
         <translation>Actualiser</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.cpp" line="62"/>
+        <location filename="../src/qvinfodialog.cpp" line="107"/>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.cpp" line="107"/>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.cpp" line="145"/>
         <source>%1 (%2 bytes)</source>
         <translation>%1 (%2&#xa0;octets)</translation>
     </message>
     <message>
-        <location filename="../src/qvinfodialog.cpp" line="64"/>
+        <location filename="../src/qvinfodialog.cpp" line="147"/>
         <source>%1 x %2 (%3 MP)</source>
         <translation>%1&#xa0;×&#xa0;%2 (%3 MP)</translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="35"/>
+        <source>Not defined</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="36"/>
+        <source>Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="37"/>
+        <source>Normal program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="38"/>
+        <source>Aperture priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="39"/>
+        <source>Shutter priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="40"/>
+        <source>Creative program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="41"/>
+        <source>Action program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="42"/>
+        <source>Portrait mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="43"/>
+        <source>Landscape mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="45"/>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="46"/>
+        <source>Compulsory flash firing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="47"/>
+        <source>Compulsory flash suppression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="48"/>
+        <source>Automatic mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="50"/>
+        <source>Average</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="51"/>
+        <source>Center-weighted average</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="52"/>
+        <source>Spot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="53"/>
+        <source>Multi-spot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="54"/>
+        <source>Multi-segment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="56"/>
+        <source>No strobe return detection function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="57"/>
+        <source>Reserved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="58"/>
+        <source>Strobe return light not detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qvinfodialog.h" line="59"/>
+        <source>Strobe return light detected</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

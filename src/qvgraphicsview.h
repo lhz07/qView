@@ -49,7 +49,7 @@ public:
     void scaleExpensively();
     void makeUnscaled();
 
-    void resetScale();
+    void resetScale(bool force_fit);
     void originalSize();
 
     void goToFile(const GoToFileMode &mode, int index = 0);
@@ -96,8 +96,8 @@ protected:
 
     bool event(QEvent *event) override;
 
-    void fitInViewMarginless(const QRectF &rect);
-    void fitInViewMarginless(const QGraphicsItem *item);
+    void fitInViewMarginless(const QRectF &rect, bool force_fit);
+    void fitInViewMarginless(const QGraphicsItem *item, bool force_fit);
 
     void centerOn(const QPointF &pos);
 

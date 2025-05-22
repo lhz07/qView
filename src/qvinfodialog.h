@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QFileInfo>
 #include <QLocale>
+#include <QLabel>
 
 namespace Ui {
 class QVInfoDialog;
@@ -29,6 +30,34 @@ private:
     int height;
 
     int frameCount;
+    QList<QLabel*> exif_labels;
+    QList<QLabel*> exif_fields;
+    const QMap<char, QString>exposure_program = {{0, tr("Not defined")},
+                                                  {1, tr("Manual")},
+                                                  {2, tr("Normal program")},
+                                                  {3, tr("Aperture priority")},
+                                                  {4, tr("Shutter priority")},
+                                                  {5, tr("Creative program")},
+                                                  {6, tr("Action program")},
+                                                  {7, tr("Portrait mode")},
+                                                  {8, tr("Landscape mode")}};
+
+    const QMap<char, QString>flash_mode = {{0, tr("Unknown")},
+                                           {1, tr("Compulsory flash firing")},
+                                           {2, tr("Compulsory flash suppression")},
+                                           {3, tr("Automatic mode")}};
+
+    const QMap<char, QString>metering_mode = {{1, tr("Average")},
+                                              {2, tr("Center-weighted average")},
+                                              {3, tr("Spot")},
+                                              {4, tr("Multi-spot")},
+                                              {5, tr("Multi-segment")}};
+
+    const QMap<char, QString>flash_returned_light = {{0, tr("No strobe return detection function")},
+                                                    {1, tr("Reserved")},
+                                                    {2, tr("Strobe return light not detected")},
+                                                    {3, tr("Strobe return light detected")}};
+
 
 public:
     // If Qt 5.10 is available, the built-in function will be used--for Qt 5.9, a custom solution will be used

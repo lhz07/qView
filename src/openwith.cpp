@@ -1,7 +1,11 @@
 ﻿#include "mainwindow.h"
 #include "openwith.h"
+#ifdef COCOA_LOADED
 #include "qvcocoafunctions.h"
+#endif
+#ifdef WIN32_LOADED
 #include "qvwin32functions.h"
+#endif
 #include "ui_qvopenwithdialog.h"
 
 #include <QCollator>

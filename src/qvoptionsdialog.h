@@ -47,9 +47,9 @@ private slots:
 
     void buttonBoxClicked(QAbstractButton *button);
 
-    void bgColorCheckboxStateChanged(int arg1);
+    void bgColorCheckboxStateChanged(Qt::CheckState arg1);
 
-    void scalingCheckboxStateChanged(int arg1);
+    void scalingCheckboxStateChanged(Qt::CheckState arg1);
 
     void windowResizeComboBoxCurrentIndexChanged(int index);
 

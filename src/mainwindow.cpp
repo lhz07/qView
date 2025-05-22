@@ -1002,7 +1002,12 @@ void MainWindow::zoomOut()
 
 void MainWindow::resetZoom()
 {
-    graphicsView->resetScale();
+    graphicsView->resetScale(false);
+}
+
+void MainWindow::zoomToWindow()
+{
+    graphicsView->resetScale(true);
 }
 
 void MainWindow::originalSize()
@@ -1078,7 +1083,7 @@ void MainWindow::saveFrameAs()
             nextFrame();
 
         graphicsView->getLoadedMovie().currentPixmap().save(fileName, nullptr, 100);
-        graphicsView->resetScale();
+        graphicsView->resetScale(false);
     });
 }
 

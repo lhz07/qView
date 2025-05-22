@@ -1,8 +1,14 @@
 #include "qvimagecore.h"
 #include "qvapplication.h"
+#ifdef WIN32_LOADED
 #include "qvwin32functions.h"
+#endif
+#ifdef COCOA_LOADED
 #include "qvcocoafunctions.h"
+#endif
+#ifdef X11_LOADED
 #include "qvlinuxx11functions.h"
+#endif
 #include <cstring>
 #include <random>
 #include <QMessageBox>

@@ -79,6 +79,8 @@ public:
 
     void resetZoom();
 
+    void zoomToWindow();
+
     void originalSize();
 
     void rotateRight();

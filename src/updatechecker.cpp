@@ -70,7 +70,7 @@ void UpdateChecker::readReply(QNetworkReply *reply)
     changelog = changelogList.join("\n");
 
     releaseDate = QDateTime::fromString(object.value("published_at").toString(), Qt::ISODate);
-    releaseDate = releaseDate.toTimeSpec(Qt::LocalTime);
+    releaseDate = releaseDate.toLocalTime();
 
     setLastCheckTime(QDateTime::currentDateTimeUtc());
 
@@ -80,7 +80,7 @@ void UpdateChecker::readReply(QNetworkReply *reply)
 QDateTime UpdateChecker::getLastCheckTime() const
 {
     qint64 secsSinceEpoch = QSettings().value("lastupdatecheck").toLongLong();
-    return secsSinceEpoch == 0 ? QDateTime() : QDateTime::fromSecsSinceEpoch(secsSinceEpoch, Qt::UTC);
+    return secsSinceEpoch == 0 ? QDateTime() : QDateTime::fromSecsSinceEpoch(secsSinceEpoch, QTimeZone::UTC);
 }
 
 void UpdateChecker::setLastCheckTime(QDateTime value)
