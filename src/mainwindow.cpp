@@ -86,8 +86,14 @@ MainWindow::MainWindow(QWidget *parent) :
     contextMenu = new QMenu(this);
 
     actionManager.addCloneOfAction(contextMenu, "open");
-    actionManager.addCloneOfAction(contextMenu, "openurl");
+    // actionManager.addCloneOfAction(contextMenu, "openurl");
     contextMenu->addMenu(actionManager.buildRecentsMenu(true, contextMenu));
+    contextMenu->addSeparator();
+    actionManager.addCloneOfAction(contextMenu, "copy");
+    actionManager.addCloneOfAction(contextMenu, "resetzoom");
+    actionManager.addCloneOfAction(contextMenu, "zoomtowindow");
+    actionManager.addCloneOfAction(contextMenu, "originalsize");
+    contextMenu->addSeparator();
     contextMenu->addMenu(actionManager.buildOpenWithMenu(contextMenu));
     actionManager.addCloneOfAction(contextMenu, "opencontainingfolder");
     actionManager.addCloneOfAction(contextMenu, "showfileinfo");
@@ -159,6 +165,8 @@ MainWindow::MainWindow(QWidget *parent) :
         settings.setValue("configversion", VERSION);
         qvApp->openWelcomeDialog(this);
     }
+    this->create();
+    addTitlebarButton(this->windowHandle());
 }
 
 MainWindow::~MainWindow()

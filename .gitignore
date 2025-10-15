@@ -1,6 +1,6 @@
 .DS_Store
 .directory
-
+xcode_proj
 # C++ objects and libs
 
 *.slo

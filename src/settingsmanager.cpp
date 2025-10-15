@@ -1,5 +1,5 @@
 #include "settingsmanager.h"
-
+#include <QLibraryInfo>
 #include <QSettings>
 #include <QTranslator>
 #include <QLocale>
@@ -53,6 +53,7 @@ bool SettingsManager::loadTranslation() const
 
     QTranslator *translator = new QTranslator();
     bool success = translator->load("qview_" + lang + ".qm", QLatin1String(":/i18n"));
+
     if (success)
     {
         qInfo() << "Loaded translation" << lang;

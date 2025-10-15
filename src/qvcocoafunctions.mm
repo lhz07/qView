@@ -7,7 +7,7 @@
 #include <QCollator>
 
 #import <Cocoa/Cocoa.h>
-
+#import <objc/runtime.h>
 
 static void fixNativeMenuEccentricities(QMenu *menu, NSMenu *nativeMenu)
 {
@@ -36,7 +36,7 @@ static void fixNativeMenuEccentricities(QMenu *menu, NSMenu *nativeMenu)
 
 void QVCocoaFunctions::showMenu(QMenu *menu, const QPoint &point, QWindow *window)
 {
-    auto *view = reinterpret_cast<NSView*>(window->winId());
+    auto *view = (__bridge NSView *)(void*)(window->winId());
 
     NSMenu *nativeMenu = menu->toNSMenu();
     fixNativeMenuEccentricities(menu, nativeMenu);
@@ -67,7 +67,7 @@ void QVCocoaFunctions::setUserDefaults()
 // This function should only be enabled once because it sets observers
 void QVCocoaFunctions::setFullSizeContentView(QWindow *window, const bool enable)
 {
-    auto *view = reinterpret_cast<NSView*>(window->winId());
+    auto *view = (__bridge NSView *)(void*)(window->winId());
 
     // Make sure the requested state isn't already in effect
     if (enable == (view.window.styleMask & NSWindowStyleMaskFullSizeContentView))
@@ -110,7 +110,7 @@ void QVCocoaFunctions::setFullSizeContentView(QWindow *window, const bool enable
 
 void QVCocoaFunctions::setVibrancy(bool alwaysDark, QWindow *window)
 {
-    auto *view = reinterpret_cast<NSView*>(window->winId());
+    auto *view = (__bridge NSView *)(void*)(window->winId());
 
     if (alwaysDark)
     {
@@ -128,7 +128,7 @@ int QVCocoaFunctions::getObscuredHeight(QWindow *window)
     if (!window)
         return 0;
 
-    auto *view = reinterpret_cast<NSView*>(window->winId());
+    auto *view = (__bridge NSView *)(void*)(window->winId());
 
     if (view.window.titlebarAppearsTransparent)
         return 0;
@@ -141,7 +141,7 @@ int QVCocoaFunctions::getObscuredHeight(QWindow *window)
 
 void QVCocoaFunctions::closeWindow(QWindow *window)
 {
-    auto *view = reinterpret_cast<NSView*>(window->winId());
+    auto *view = (__bridge NSView *)(void*)(window->winId());
     [view.window close];
 }
 
@@ -188,8 +188,8 @@ QList<OpenWith::OpenWithItem> QVCocoaFunctions::getOpenWithItems(const QString &
     }
 
 
-    NSArray *supportedApplications = [(NSArray *)LSCopyAllRoleHandlersForContentType((CFStringRef)utiType, kLSRolesAll) autorelease];
-    NSString *defaultApplication = [(NSString *)LSCopyDefaultRoleHandlerForContentType((CFStringRef)utiType, kLSRolesAll) autorelease];
+    NSArray *supportedApplications = (__bridge_transfer NSArray *)LSCopyAllRoleHandlersForContentType((__bridge CFStringRef)utiType, kLSRolesAll);
+    NSString *defaultApplication = (__bridge_transfer NSString *)LSCopyDefaultRoleHandlerForContentType((__bridge CFStringRef)utiType, kLSRolesAll);
 
     QList<OpenWith::OpenWithItem> listOfOpenWithItems;
     for (NSString *appId in supportedApplications)
@@ -201,8 +201,10 @@ QList<OpenWith::OpenWithItem> QVCocoaFunctions::getOpenWithItems(const QString &
         openWithItem.exec = "open";
         openWithItem.args.append({"-b", QString::fromNSString(appId)});
 
-        NSString *absolutePath = [[NSWorkspace sharedWorkspace] absolutePathForAppBundleWithIdentifier:appId];
-
+        NSString *absolutePath = [[[NSWorkspace sharedWorkspace] URLForApplicationWithBundleIdentifier:appId] path];
+        if (!absolutePath) {
+            continue;
+        }
         NSString *appName = [[NSFileManager defaultManager] displayNameAtPath:absolutePath];
         openWithItem.name = QString::fromNSString(appName);
 
@@ -211,7 +213,7 @@ QList<OpenWith::OpenWithItem> QVCocoaFunctions::getOpenWithItems(const QString &
         openWithItem.icon = ActionManager::getCacheableIcon("application:" + QString::fromNSString(appId), icon);
 
         // If the program is the default program, save it to add to the beginning after sorting
-        if ([appId isEqualToString:defaultApplication])
+        if (defaultApplication && [appId isEqualToString:defaultApplication])
         {
             openWithItem.isDefault = true;
             openWithItem.name += QT_TR_NOOP(" (default)");
@@ -242,7 +244,7 @@ QString QVCocoaFunctions::deleteFile(const QString &filePath)
 
 QByteArray QVCocoaFunctions::getIccProfileForWindow(const QWindow *window)
 {
-    NSView *view = reinterpret_cast<NSView*>(window->winId());
+    NSView *view = (__bridge NSView *)(void*)(window->winId());
     NSColorSpace *nsColorSpace = view.window.colorSpace;
     if (nsColorSpace)
     {
@@ -253,4 +255,75 @@ QByteArray QVCocoaFunctions::getIccProfileForWindow(const QWindow *window)
         }
     }
     return {};
+}
+static const void *kImgViewKey = &kImgViewKey;
+// 添加点击行为
+@implementation NSWindow (Ext)
+
+- (void)_init{
+
+    // 创建按钮
+    NSButton *button = [NSButton buttonWithTitle:@""
+                                           target:nil
+                                           action:@selector(pinButtonClicked:)];
+    button.bezelStyle = NSBezelStyleTexturedRounded;
+    [button setTarget:nil];
+    // 设置为 toggle 类型（即点击切换状态）
+    [button setButtonType:NSButtonTypeToggle];
+    NSImage *image = [NSImage imageWithSystemSymbolName:@"pin.slash.fill" accessibilityDescription:nil];
+    image = [image imageWithSymbolConfiguration:[NSImageSymbolConfiguration configurationPreferringHierarchical]];
+    // button.image = image;
+    // 设置初始状态
+    [button setState:NSControlStateValueOff];
+
+    NSRect windowFrame = self.frame;
+    NSRect contentRect = self.contentLayoutRect;
+    CGFloat titleBarHeight = windowFrame.size.height - contentRect.size.height;
+    // 容器视图
+    NSView *container = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 40, titleBarHeight)];
+    NSImageView* img_view = [[NSImageView alloc] init];
+    objc_setAssociatedObject(self, kImgViewKey, img_view, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    img_view.image = image;
+    [container addSubview:button];
+    [container addSubview:img_view];
+    button.frame = NSMakeRect(0, 0, 35, titleBarHeight);
+    img_view.frame = button.bounds;
+
+    // 放入 Titlebar Accessory
+    NSTitlebarAccessoryViewController *accessory = [[NSTitlebarAccessoryViewController alloc] init];
+    accessory.view = container;
+    accessory.layoutAttribute = NSLayoutAttributeRight;
+
+    [self addTitlebarAccessoryViewController:accessory];
+}
+
+- (void)pinButtonClicked:(NSButton *)sender {
+    NSImageView *img_view = objc_getAssociatedObject(self, kImgViewKey);
+    NSString *icon_name;
+    if (sender.state){
+        img_view.contentTintColor = [NSColor controlAccentColor];
+        icon_name = @"pin.fill";
+        self.level = NSFloatingWindowLevel;
+    }else{
+        img_view.contentTintColor = nil;
+        icon_name = @"pin.slash.fill";
+        self.level = NSNormalWindowLevel;
+    }
+    NSImage *image = [NSImage imageWithSystemSymbolName:icon_name accessibilityDescription:nil];
+
+    NSImage *config_image = [image imageWithSymbolConfiguration:[NSImageSymbolConfiguration configurationPreferringHierarchical]];
+    if (config_image) {
+        image = config_image;
+    }
+    [img_view setSymbolImage:image withContentTransition:[NSSymbolReplaceContentTransition magicTransitionWithFallback: NSSymbolReplaceContentTransition.replaceDownUpTransition.transitionWithWholeSymbol] options: [NSSymbolEffectOptions optionsWithNonRepeating]];
+
+}
+
+@end
+
+void addTitlebarButton(QWindow *window_handle) {
+    if (!window_handle) return;
+    NSView *nsview = (__bridge NSView *)(void*)(window_handle->winId());
+    NSWindow* window = [nsview window];
+    [window _init];
 }

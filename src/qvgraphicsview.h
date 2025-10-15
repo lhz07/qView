@@ -31,8 +31,13 @@ public:
        next,
        last
     };
+
     Q_ENUM(GoToFileMode)
 
+    enum class TouchState{
+        touching,
+        untouched,
+    };
 
     QMimeData* getMimeData() const;
     void loadMimeData(const QMimeData *mimeData);
@@ -104,6 +109,7 @@ protected:
     void centerOn(qreal x, qreal y);
 
     void centerOn(const QGraphicsItem *item);
+    bool viewportEvent(QEvent *event) override;
 
 
 private slots:
@@ -126,8 +132,20 @@ private:
     bool isScrollZoomsEnabled;
     bool isLoopFoldersEnabled;
     bool isCursorZoomEnabled;
+    bool ignoreOtherScroll = false;
+    int lastScrollX = 0;
+    Qt::ScrollPhase lastScrollPhase = Qt::NoScrollPhase;
+    int currentCenterX = 0;
     int cropMode;
     qreal scaleFactor;
+
+    TouchState currentTouchState = TouchState::untouched;
+    GoToFileMode preMode = GoToFileMode::constant;
+
+    // scroll var
+    // int upAngle;
+    // int downAngle;
+    // int triggerAngle = 160;
 
     constexpr static int MARGIN = -2;
     constexpr static qreal MAX_EXPENSIVE_SCALING_SIZE = 3;

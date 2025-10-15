@@ -33,5 +33,5 @@ public:
 
     static QByteArray getIccProfileForWindow(const QWindow *window);
 };
-
+void addTitlebarButton(QWindow *window_handle);
 #endif // QVCOCOAFUNCTIONS_H
